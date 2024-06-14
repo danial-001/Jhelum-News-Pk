@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>International News</title>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"
+    />
+    <style>
+      body {
+        background-color: #f8f8f8;
+        font-family: "Roboto Condensed", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        width: 100%;
+        background: #004b87;
+        box-shadow: 0px 3px 6px #00000029;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+      }
+      .editor-name {
+        flex: 1;
+        text-align: right;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+        font-size: 1em;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+      }
+      .navbar {
+        background-color: #004b87;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .navbar-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .navbar-content a {
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+      .navbar-content a img {
+        margin-right: 5px;
+      }
+      .navbar-content a:hover {
+        background-color: #555;
+      }
+      .login-icon {
+        color: #004b87;
+        width: 28px;
+        height: 28px;
+      }
+      @media (max-width: 768px) {
+        .editor-name {
+          font-size: 0.8em;
+        }
+        .logo {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      @media (max-width: 480px) {
+        .editor-name {
+          display: none;
+        }
+        .logo {
+          width: 30px;
+          height: 30px;
+        }
+        .navbar-content a {
+          font-size: 0.8em;
+          padding: 5px 10px;
+        }
+        .navbar-content a img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="editor-name">
+        چیف ایڈیٹر طارق محمود چودھری ایڈیٹر مظہر اقبال چودھری ریزیڈنٹ ایڈیٹر
+        ادریس چودھری
+      </div>
+      <img class="logo" src="/images/logo.png" alt="jhelum news logo" />
+    </header>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      color="#000000"
+      fill="none"
+    >
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+      <path
+        d="M12 8V12L14 14"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <div class="navbar">
+      <div class="navbar-content">
+        <a class="home" href="/"
+          ><img src="/images/home.png" alt="Home Icon" />صفحۂ اول</a
+        >
+        <a class="jhelum-page" href="/jhelum_news"
+          ><img src="/images/city.png" alt="City Icon" />جہلم خبریں</a
+        >
+        <a class="national-page" href="/national_news"
+          ><img src="/images/pakistan.png" alt="Pakistan Icon" />قومی خبریں</a
+        >
+        <a class="international-page" href="/international_news"
+          ><img src="/images/globe.png" alt="Globe Icon" />بین الاقوامی خبریں</a
+        >
+        <a class="about-page" href="/about_us"
+          ><img src="/images/group.png" alt="About Us Icon" />ہمارے بارے میں</a
+        >
+        <a class="contact-page" href="/contact_us"
+          ><img src="/images/contact-us.png" alt="Contact Us Icon" />رابطہ
+          کریں</a
+        >
+      </div>
+      <a href="/signin" title="Sign In">
+        <svg
+          class="login-icon"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 112c-48.6 0-88 39.4-88 88C168 248.6 207.4 288 256 288s88-39.4 88-88C344 151.4 304.6 112 256 112zM256 240c-22.06 0-40-17.95-40-40C216 177.9 233.9 160 256 160s40 17.94 40 40C296 222.1 278.1 240 256 240zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-46.73 0-89.76-15.68-124.5-41.79C148.8 389 182.4 368 220.2 368h71.69c37.75 0 71.31 21.01 88.68 54.21C345.8 448.3 302.7 464 256 464zM416.2 388.5C389.2 346.3 343.2 320 291.8 320H220.2c-51.36 0-97.35 26.25-124.4 68.48C65.96 352.5 48 306.3 48 256c0-114.7 93.31-208 208-208s208 93.31 208 208C464 306.3 446 352.5 416.2 388.5z"
+            fill="#004b87"
+          />
+        </svg>
+      </a>
+    </div>
+  </body>
+</html>

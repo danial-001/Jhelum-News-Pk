@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ur">
+  <head>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <style>
+      .navbar {
+        color: whitesmoke;
+        font-weight: bold;
+        background-color: #004b87;
+      }
+      textarea,
+      input[type="text"] {
+        font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq",
+          "Urdu Typesetting", "Arial", sans-serif;
+      }
+      .logo {
+        /* Layout Properties */
+        position: absolute;
+        top: 50px;
+        left: 90%;
+        width: 80px;
+        height: 80px;
+        /* UI Properties */
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 10px;
+        opacity: 1;
+      }
+      .navbarmove {
+        margin-right: 80px;
+      }
+      .navbar-brand {
+        color: white;
+      }
+      #white {
+        color: white;
+      }
+      .div-final{
+        display: flex;
+        justify-content: space-between;
+        background-color: #004b87;
+      }
+      .div-1{
+        margin-left: 25px;
+      }
+      .div-2{
+        display: flex;
+      }
+      li {
+        list-style-type: none;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.rtl.min.css"
+      integrity="sha512-VNBisELNHh6+nfDjsFXDA6WgXEZm8cfTEcMtfOZdx0XTRoRbr/6Eqb2BjqxF4sNFzdvGIt+WqxKgn0DSfh2kcA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.datatables.net/v/bs4/dt-2.0.7/datatables.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/dt-2.0.7/datatables.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-qFOQ9YFAeGj1gDOuUD61g3D+tLDv3u1ECYWqT82WQoaWrOhAY+5mRMTTVsQdWutbA5FORCnkEPEgU0OF8IzGvA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    
+       <div class="div-final"> <div class="div-1">
+        <a id="white" class="navbar-brand" href="/">Jhelum News</a>
+      </div>
+      
+      <div class="div-2">
+          <a
+            id="white"
+            class="nav-link active"
+            aria-current="page"
+            href="/index"
+            >Home</a
+          >
+          <a
+            id="white"
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Add News
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/addnews/jhelum"
+                >Jhelum News</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="/addnews/national"
+                >National News</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="/addnews/international"
+                >International News</a
+              >
+            </li>
+          </ul>
+      </div></div>
+      <img class="logo" src="/images/logo-final.jpg" alt="jhelum news logo" />
+    </nav>
+  </body>
+</html>

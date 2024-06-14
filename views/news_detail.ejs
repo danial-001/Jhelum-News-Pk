@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= article.newsHeading %></title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Fonts: Noto Nastaliq Urdu -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"
+    />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <style>
+      @font-face {
+        font-family: "Noori Nastaleeq";
+        src: url("fonts/urdu-font.ttf") format("truetype");
+      }
+
+      body {
+        background-color: #f8f8f8;
+        font-family: "Noto Nastaliq Urdu", sans-serif;
+      }
+
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 50px;
+        background: #004b87 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+      }
+      .editor-name {
+        position: relative;
+        height: 30px;
+        display: flex;
+        width: 100%;
+      }
+
+      .logo {
+        /* Layout Properties */
+        position: relative;
+        top: 5px;
+        left: 85%;
+        width: 80px;
+        height: 80px;
+        /* UI Properties */
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 10px;
+        opacity: 1;
+      }
+      footer {
+        /* Layout Properties */
+        position: relative;
+        bottom: 0;
+        left: 0px;
+        width: 100%;
+        height: 300px;
+        /* UI Properties */
+        background: #004b87 0% 0% no-repeat padding-box;
+        opacity: 1;
+      }
+      .foot {
+        display: flex;
+        justify-content: center;
+      }
+      .foot-content {
+        margin-top: 40px;
+      }
+      .foot-content img {
+        margin: 0 5px;
+        height: 80px;
+        width: 80px;
+      }
+      .line1 {
+        /* UI Properties */
+        border: 2px dashed #ffffff;
+        opacity: 1;
+        width: 30%;
+        height: 0px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+      }
+      .line2 {
+        /* UI Properties */
+        border: 2px dashed #ffffff;
+        opacity: 1;
+        width: 30%;
+        height: 0px;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .copyright {
+        /* UI Properties */
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+        letter-spacing: 0px;
+        color: #ffffff;
+      }
+      .text-end {
+        text-align: center;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 19px;
+        letter-spacing: 0px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-end0 {
+        text-align: center;
+        color: #ffffff;
+        width: 80%;
+        letter-spacing: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .last-container {
+        margin-top: 15px;
+      }
+      .footerlogo {
+        /* Layout Properties */
+        /* UI Properties */
+        background: transparent url("img/logo.png") 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 10px;
+        opacity: 1;
+        position: absolute; /* Absolute positioning to overlap the footer */
+        top: 25%; /* Adjust to place the logo correctly */
+        left: 80%;
+        transform: translateX(-30%);
+        width: 170px; /* Adjust the size as needed */
+        height: 170px;
+      }
+
+      .newsh2 h2 {
+        margin-top: 25px;
+        font-weight: bold;
+        font-size: 2rem;
+        line-height: 3.375rem;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        margin-right: 10px;
+        font-weight: bold;
+        text-align: right;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+      }
+      .newsp {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .time {
+        margin-bottom: 10px;
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 1rem;
+        direction: rtl;
+      }
+      .display-all {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .newsimg {
+        display: flex;
+        justify-content: center;
+      }
+      .newsimg img {
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+      }
+      .newsp {
+        width: 100%;
+      }
+      .paragraph {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        font-size: 1rem;
+        line-height: 2rem;
+      }
+      .time-final {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+      }
+      @media (min-width: 1440px) {
+        .editor-name {
+          margin-left: 25px;
+          position: relative;
+          font-weight: bold;
+          font-size: 15px;
+          color: wheat;
+          gap: 15px;
+          display: flex;
+          width: 80%;
+          align-items: end;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1439px) {
+        .footerlogo {
+          /* Layout Properties */
+          /* UI Properties */
+          background: transparent url("img/logo.png") 0% 0% no-repeat
+            padding-box;
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 10px;
+          opacity: 1;
+          position: absolute; /* Absolute positioning to overlap the footer */
+          top: 25%; /* Adjust to place the logo correctly */
+          left: 85%;
+          transform: translateX(-30%);
+          width: 100px; /* Adjust the size as needed */
+          height: 100px;
+        }
+        footer {
+          /* Layout Properties */
+          position: relative;
+          bottom: 0;
+          left: 0px;
+          width: 100%;
+          height: 250px;
+          /* UI Properties */
+          background: #004b87 0% 0% no-repeat padding-box;
+          opacity: 1;
+        }
+        .foot {
+          display: flex;
+          justify-content: center;
+        }
+        .foot-content {
+          margin-top: 40px;
+        }
+        .foot-content img {
+          margin: 0 5px;
+          height: 55px;
+          width: 55px;
+        }
+        .line1 {
+          /* UI Properties */
+          border: 2px dashed #ffffff;
+          opacity: 1;
+          width: 300px;
+          height: 0px;
+          margin-top: 15px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 2px;
+        }
+        .line2 {
+          /* UI Properties */
+          border: 2px dashed #ffffff;
+          opacity: 1;
+          width: 300px;
+          height: 0px;
+          margin-top: 2px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .copyright {
+          /* UI Properties */
+          text-align: center;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 17px;
+          letter-spacing: 0px;
+          color: #ffffff;
+        }
+        .text-end {
+          text-align: center;
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 15px;
+          letter-spacing: 0px;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .text-end0 {
+          text-align: center;
+          color: #ffffff;
+          width: 80%;
+          letter-spacing: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .last-container {
+          margin-top: 15px;
+        }
+        .editor-name {
+          margin-left: 15px;
+          position: relative;
+          font-weight: bold;
+          font-size: 13px;
+          color: wheat;
+          gap: 10px;
+          display: flex;
+          width: 80%;
+          align-items: end;
+        }
+      }
+      @media (min-width: 400px) and (max-width: 767px) {
+        .logo {
+          /* Layout Properties */
+          position: relative;
+          top: 0px;
+          left: 80%;
+          width: 70px;
+          height: 70px;
+          /* UI Properties */
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 10px;
+          opacity: 1;
+        }
+        .footerlogo {
+          /* Layout Properties */
+          /* UI Properties */
+          background: transparent url("img/logo.png") 0% 0% no-repeat
+            padding-box;
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 10px;
+          opacity: 1;
+          position: absolute; /* Absolute positioning to overlap the footer */
+          top: 20%; /* Adjust to place the logo correctly */
+          left: 85%;
+          transform: translateX(-30%);
+          width: 60px; /* Adjust the size as needed */
+          height: 60px;
+        }
+        footer {
+          /* Layout Properties */
+          position: relative;
+          bottom: 0;
+          left: 0px;
+          width: 100%;
+          height: 250px;
+          /* UI Properties */
+          background: #004b87 0% 0% no-repeat padding-box;
+          opacity: 1;
+        }
+        .foot {
+          display: flex;
+          justify-content: center;
+        }
+        .foot-content {
+          margin-top: 40px;
+        }
+        .foot-content img {
+          margin: 0 5px;
+          height: 35px;
+          width: 35px;
+        }
+        .line1 {
+          /* UI Properties */
+          border: 1.5px dashed #ffffff;
+          opacity: 1;
+          width: 210px;
+          height: 0px;
+          margin-top: 15px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 2px;
+        }
+        .line2 {
+          /* UI Properties */
+          border: 1.5px dashed #ffffff;
+          opacity: 1;
+          width: 210px;
+          height: 0px;
+          margin-top: 2px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .copyright {
+          /* UI Properties */
+          text-align: center;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 13px;
+          letter-spacing: 0px;
+          color: #ffffff;
+        }
+        .text-end {
+          text-align: center;
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 15px;
+          letter-spacing: 0px;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .text-end0 {
+          text-align: center;
+          color: #ffffff;
+          width: 80%;
+          letter-spacing: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 12px;
+        }
+        /* .last-container {
+          margin-top: 15px;
+        } */
+        .editor-name {
+          margin-left: 5px;
+          position: relative;
+          font-weight: bold;
+          font-size: 10px;
+          color: wheat;
+          gap: 10px;
+          display: flex;
+          width: 90%;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="editor-name">
+        <div class="ed-name">ریزیڈنٹ ایڈیٹر ادریس چودھری</div>
+        <div class="ed-name">ایڈیٹر مظہر اقبال چودھری</div>
+        <div class="ed-name">چیف ایڈیٹر طارق محمود چودھری</div>
+      </div>
+      <img class="logo" src="/images/logo-final.jpg" alt="jhelum news logo" />
+    </header>
+
+    <div class="display-all">
+      <div class="newsh2">
+        <h2><%= article.newsHeading %></h2>
+      </div>
+      <div class="newsimg">
+        <img src="/<%= article.image %>" alt="News Image" />
+      </div>
+
+      <div class="paragraph">
+        <div class="newsp">
+          <p style="text-align: right"><%= article.description %></p>
+        </div>
+      </div>
+      <div class="time-final">
+        <div class="newstime">
+          <p class="time"><%= article.newsCreationTime %></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <img
+        class="footerlogo"
+        src="/images/logo-final.jpg"
+        alt="jhelum news logo"
+        height="80px"
+        width="80px"
+      />
+      <div class="foot">
+        <div class="foot-content">
+          <a href=""><img src="/images/f_email.png" alt="" /></a>
+          <a href=""><img src="/images/f_insta.png" alt="" /></a>
+          <a href=""><img src="/images/f_utube.png" alt="" /></a>
+          <a href=""><img src="/images/f_fb.png" alt="" /></a>
+          <a href=""><img src="/images/f_x.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="line1"></div>
+      <p class="copyright">Copyright © JHELUM NEWS</p>
+      <div class="line2"></div>
+      <div class="last-container">
+        <p class="text-end0">contact@jhelumnews.pk | © All rights reserved.</p>
+        <p class="text-end">
+          یہ ویب سائٹ کے مواد کی نقل یا غیر مجاز استعمال کسی بھی طریقے سے خلاف
+          ورزی ہے اور سختی سے ممنوع ہے۔
+        </p>
+      </div>
+    </footer>
+    <script>
+      function updateTimeDifference() {
+        const newsItems = document.querySelectorAll(".time");
+        newsItems.forEach((newsItem) => {
+          const newsTimeString = newsItem.textContent;
+          const newsTime = new Date(newsTimeString.replace(/-/g, "/")); // Replace hyphens with slashes for cross-browser compatibility
+
+          // Check if newsTime is a valid Date object
+          if (isNaN(newsTime.getTime())) {
+            console.error(`Invalid date format for "${newsTimeString}"`);
+            return; // Skip this iteration
+          }
+
+          const currentTime = new Date();
+          const timeDifferenceInSeconds = Math.floor(
+            (currentTime - newsTime) / 1000
+          ); // Time difference in seconds
+
+          // Format the time difference in Urdu
+          let formattedTimeDifference;
+          if (timeDifferenceInSeconds < 60) {
+            formattedTimeDifference = `${timeDifferenceInSeconds} سیکنڈ پہلے`;
+          } else if (timeDifferenceInSeconds < 3600) {
+            const minutes = Math.floor(timeDifferenceInSeconds / 60);
+            formattedTimeDifference = `${minutes} منٹ پہلے`;
+          } else if (timeDifferenceInSeconds < 86400) {
+            // Less than 24 hours
+            const hours = Math.floor(timeDifferenceInSeconds / 3600);
+            const remainingMinutes = Math.floor(
+              (timeDifferenceInSeconds % 3600) / 60
+            );
+            formattedTimeDifference = `${hours} گھنٹے ${remainingMinutes} منٹ پہلے`;
+          } else {
+            const days = Math.floor(timeDifferenceInSeconds / 86400);
+            formattedTimeDifference = `${days} دن پہلے`;
+          }
+
+          // Update the element's content
+          newsItem.textContent = formattedTimeDifference;
+        });
+      }
+
+      // Call updateTimeDifference once when the page loads
+      updateTimeDifference();
+
+      // Call updateTimeDifference every second to keep the time difference updated
+      setInterval(updateTimeDifference, 1000); // 1000 milliseconds = 1 second
+    </script>
+  </body>
+</html>

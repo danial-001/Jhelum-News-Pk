@@ -1,0 +1,44 @@
+<%- include('layout/header') %>
+<div class="container">
+  <h2 class="mt-5">National News</h2>
+  <form
+    action="/addnews/national"
+    method="post"
+    id="news-form"
+    enctype="multipart/form-data"
+  >
+    <div class="form-group">
+      <label for="newsTitle">News Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="newsTitle"
+        name="newsHeading"
+        placeholder="Enter title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="newsDescription">News Description</label>
+      <textarea
+        class="form-control"
+        id="newsDescription"
+        name="description"
+        rows="3"
+        placeholder="Enter description"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="image">News Picture</label>
+      <input
+        type="file"
+        name="image"
+        class="form-control-file"
+        id="newsPicture"
+      />
+    </div>
+    <input type="hidden" name="category" value="NATIONAL NEWS" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<%- include('layout/footer') %>

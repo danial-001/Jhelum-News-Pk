@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+.navbar .brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar .nav-links {
+  display: flex;
+  gap: 15px;
+}
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+/* Individual hover colors */
+.navbar .nav-links a:nth-child(1):hover {
+  color: #ff6347; /* Tomato */
+}
+.navbar .nav-links a:nth-child(2):hover {
+  color: #4682b4; /* SteelBlue */
+}
+.navbar .nav-links a:nth-child(3):hover {
+  color: #32cd32; /* LimeGreen */
+}
+.navbar .nav-links a:nth-child(4):hover {
+  color: #ffa500; /* Orange */
+}
+.navbar .login-icon a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+.navbar .login-icon a:hover {
+  color: #ddd;
+}
+.urdu {
+  font-family: "Noto Nastaliq Urdu", serif;
+  direction: rtl;
+  text-align: right;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .navbar .login-icon {
+    align-self: flex-end;
+  }
+}

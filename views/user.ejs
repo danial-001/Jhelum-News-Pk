@@ -1,0 +1,3190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jhelum News</title>
+    <!-- js import -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <style>
+     
+
+
+
+     @font-face {
+        font-family: "Noori Nastaleeq";
+        src: url("fonts/urdu-font.ttf") format("truetype");
+      }
+      .time-icon {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        margin-right: 10px;
+      }
+      .time-icon {
+          direction: rtl;
+        }
+
+      body {
+        background-color: #f8f8f8;
+        font-family: "Noori Nastaleeq", sans-serif;
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 50px;
+        background: #004b87 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+      }
+      .editor-name {
+        position: relative;
+        height: 30px;
+        display: flex;
+        width: 100%;
+      }
+
+      .logo {
+        position: relative;
+    top: 5px;
+    left: 85%;
+    width: 80px;
+    height: 80px;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 10px;
+    opacity: 1;
+      }
+      .navbar {
+        /*position: relative;*/
+        /* background-color: #333; */
+        color: rgb(0, 0, 0);
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        opacity: 1;
+        justify-content: center;
+      }
+
+      .menu-icon {
+        font-size: 1.5em;
+        cursor: pointer;
+        display: none;
+      }
+      .navbar-content {
+        display: flex;
+        /*flex-direction: row;*/
+        direction: rtl;
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        letter-spacing: 0px;
+        opacity: 1;
+        text-decoration: none;
+        justify-content: center;
+      }
+
+      .navbar-content a {
+        /*padding: 0.5em 1em;
+        /*display: flex;
+        align-items: center;*/
+        /*color: #333333;
+        text-decoration: none;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 25px;*/
+
+        color: #333333;
+        text-decoration: none;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+      /* .navbar {
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: center;
+      }
+      .navbar-content {
+        position: relative;
+        text-align: center;
+        font: normal normal bold 20px/25px Helvetica Neue;
+        letter-spacing: 0px;
+ 
+        opacity: 1;
+        text-decoration: none;
+      }
+      .navbar-content a {
+        color: #333333;
+        text-decoration: none;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+      } */
+      .navbar .navbar-content a:nth-child(1):hover {
+        color: rgb(224, 224, 224);
+        background-color: #ff1b1b;
+      }
+      .navbar .navbar-content a:nth-child(2):hover {
+        color: rgb(224, 224, 224);
+        background-color: #3888ff; /* SteelBlue */
+      }
+      .navbar .navbar-content a:nth-child(3):hover {
+        color: rgb(224, 224, 224);
+        background-color: #902490; /* LimeGreen */
+      }
+      .navbar .navbar-content a:nth-child(4):hover {
+        color: rgb(224, 224, 224);
+        background-color: #ffa500; /* Orange */
+      }
+      .navbar .navbar-content a:nth-child(5):hover {
+        color: rgb(224, 224, 224);
+        background-color: #1b3b5e; /* LimeGreen */
+      }
+      .navbar .navbar-content a:nth-child(6):hover {
+        color: rgb(224, 224, 224);
+        background-color: #137f5d; /* Orange */
+      }
+
+      .svg {
+        display: none;
+      }
+
+      .home {
+        color: white;
+        background-color: #ff1b1b; /* SteelBlue */
+      }
+      .login-icon {
+        position: relative;
+        top: 6px;
+        right: 1150px;
+        width: 28px;
+        height: 28px;
+        z-index: 1;
+        /* UI Properties */
+        color: #004b87 0% 0% no-repeat padding-box;
+        opacity: 1;
+      }
+
+      .marquee{
+        background-color: white;
+        margin-top: 18px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      marquee{
+        width: 75%;
+        margin-left: auto;
+        margin-right: 135px;
+      }
+      .marquee-content{
+        display: inline-block;
+        flex-direction: row;
+        color: #008080;
+      }
+
+
+      .price-tag{
+        display: flex;
+
+      }
+      .update {
+        display: inline-block;
+        
+        width: auto;
+        height: 38px;
+        
+        background-color: #CC0008;
+        -webkit-border-radius: 3px 4px 4px 3px;
+        -moz-border-radius: 3px 4px 4px 3px;
+        border-radius: 3px 0px 0px 3px;
+        
+        border-left: 1px solid #CC0008;
+      
+        /* This makes room for the triangle */
+        
+        font-size: 22px;
+        position: relative;
+        right: 113px;
+        color: white;
+        line-height: 38px;
+      
+        padding: 0 10px 0 10px;
+      }
+      
+      /* Makes the triangle */
+      .update:before {
+        content: "";
+        position: absolute;
+        display: block;
+        left: -19px;
+        width: 0;
+        height: 0;
+        border-top: 19px solid transparent;
+        border-bottom: 19px solid transparent;
+        border-right: 19px solid #CC0008;
+      }
+      .strips{
+        position: relative;
+        right: 110px;
+        display: flex;
+        gap: 2px;
+      }
+      .strip{
+        height: 38px;
+        width: 4px;
+        background-color: #CC0008;
+      }
+
+
+
+
+        .time {
+        /* UI Properties */
+        text-align: left;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0px;
+        color: #333333;
+        opacity: 0.5;
+        direction: rtl;
+      }
+
+
+
+        footer {
+        /* Layout Properties */
+        position: relative;
+        bottom: 0;
+        left: 0px;
+        width: 100%;
+        height: 300px;
+        /* UI Properties */
+        background: #004b87 0% 0% no-repeat padding-box;
+        opacity: 1;
+      }
+      .foot {
+        display: flex;
+        justify-content: center;
+      }
+      .foot-content {
+        margin-top: 40px;
+      }
+      .foot-content img {
+        margin: 0 5px;
+        height: 80px;
+        width: 80px;
+      }
+      .line1 {
+        /* UI Properties */
+        border: 2px dashed #ffffff;
+        opacity: 1;
+        width: 30%;
+        height: 0px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+      }
+      .line2 {
+        /* UI Properties */
+        border: 2px dashed #ffffff;
+        opacity: 1;
+        width: 30%;
+        height: 0px;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .copyright {
+        /* UI Properties */
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+        letter-spacing: 0px;
+        color: #ffffff;
+      }
+      .text-end {
+        text-align: center;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 19px;
+        letter-spacing: 0px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-end0 {
+        text-align: center;
+        color: #ffffff;
+        width: 80%;
+        letter-spacing: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .last-container {
+        margin-top: 15px;
+      }
+      .footerlogo {
+        /* Layout Properties */
+        /* UI Properties */
+        background: transparent url("img/logo.png") 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 10px;
+        opacity: 1;
+        position: absolute; /* Absolute positioning to overlap the footer */
+        top: 25%; /* Adjust to place the logo correctly */
+        left: 80%;
+        transform: translateX(-30%);
+        width: 170px; /* Adjust the size as needed */
+        height: 170px;
+      }
+      hr {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 80%;
+        border: none;
+        border-top: 1px solid #e0e0e0;
+      }
+      .news-container {
+        display: flex;
+        flex-direction: row; /* Change from column to row */
+        width: 70vw; /* Adjusted width */
+        gap: 15px;
+        padding: 5px;
+        margin: 0 auto;
+        direction: rtl;
+      }
+
+      .main-news {
+        width: 50%; /* Adjusted width to take 60% of the container */
+        max-height: 50%;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000029;
+        border: 1px solid #ced8e280;
+        border-radius: 0px;
+        padding: 5px; /* Added padding for content spacing */
+        
+      }
+
+      .main-news img {
+        width: 100%;
+      }
+
+      .main-news h2 {
+        margin-right: 30px;
+        font-size: 24px;
+        font-weight: bold;
+        /* margin-top: 10px; Added margin for spacing */
+        text-align: right;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+      }
+
+      .main-news p {
+        margin-right: 30px;
+        font-size: 18px;
+        margin-top: 10px; /* Added margin for spacing */
+      }
+
+      .side-news {
+        width: 45%; /* Adjusted width to take 35% of the container */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .side-news-item {
+        display: flex;
+        background: #ffffff;
+        box-shadow: 0px 1px 3px #00000029;
+        border: 1px solid #ced8e280;
+        height: 118px;
+        overflow: hidden;
+        
+      }
+
+      .side-news-item img {
+        max-width: 150px;
+      }
+
+      .side-news-item h3 {
+        margin-top: 10px;
+        font: normal normal bold 18px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .side-news-item p {
+        margin-right: 10px;
+        font-size: 16px;
+        overflow: hidden; /* Hide the overflow text */
+        display: -webkit-box; /* Required for webkit-based browsers */
+        -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+        -webkit-line-clamp: 3; /* Number of lines to show */
+        text-overflow: ellipsis;
+      }
+      .weather-fetching {
+        background-image: url("../farhan.jpeg");
+        background-size: cover;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .weather-info p {
+        margin: 5px 0;
+      }
+     
+      .weather-fetching {
+        /* width: 30%; Adjusted width to take 60% of the container */
+        height: 100%;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000029;
+        border: 1px solid #ced8e280;
+        border-radius: 10px;
+        padding: 20px;
+        color: black;
+        direction: rtl;
+      }
+      .jhelum-news-container {
+        display: flex;
+        flex-direction: row; /* Change from column to row */
+        width: 70vw; /* Adjusted width */
+        gap: 20px;
+        padding: 20px;
+        margin: 0 auto;
+      }
+      .jhelum-news {
+        /* width: 70%; */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px; /* Optional: Adds space between the grid items */
+      }
+      .jhelum-news-card {
+        box-shadow: 0px 1px 3px #00000029;
+        border: 1px solid #ced8e280;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+      }
+      .weather-info {
+        direction: rtl;
+      }
+      #jhelum-weather-info {
+        text-align: right;
+        font: bold 18px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+       
+      }
+      .jhelum-news-card img {
+        width: 100%;
+        height: 150px;
+      }
+      .jhelum-news-card h3{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-weight:bold;
+        font-size:  18px;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      .jhelum-news-card p{
+        margin-right: 5px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .national-news {
+        
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px; /* Optional: Adds space between the grid items */
+      }
+      .national-news-card {
+        box-shadow: 0px 1px 3px #00000029;
+        border: 1px solid #ced8e280;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+      }
+      .national-news-card img{
+        width: 100%;
+        height: 150px;
+      }
+      .international-news {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px; /* Optional: Adds space between the grid items */
+      }
+      .international-news-card {
+        box-shadow: 0px 1px 3px #00000029;
+        border: 1px solid #ced8e280;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+      }
+      .international-news-card img{
+        width: 100%;
+        height: 150px;
+      }
+      .international-news-card h3{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-weight:bold;
+        font-size: 18px;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      .international-news-card p{
+        margin-right: 5px;
+        font-weight: bold;
+        /* margin-top: 5px; */
+        font-size: 12px;
+      }
+      .weather-fetching{
+        background: transparent url('/images/rohtas.jpeg');
+        border-radius: 10px;
+        opacity: 1;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .weather-button{
+        position: relative;
+        top: 250px;
+        margin-right: 20px;
+        text-align: left;
+        font:  bold 13px Helvetica Neue;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        padding: 15px;
+        border-radius:30px ;
+        border: 3px solid rgb(116, 0, 0);
+        background-color: red;
+        cursor: pointer;
+      }
+      .national-news-card h3{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        font-weight:bold;
+        font-size:  18px;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      .national-news-card p{
+        margin-right: 5px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .link {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit color from parent */
+        
+      }
+      .description{
+        overflow: hidden; /* Hide the overflow text */
+        display: -webkit-box; /* Required for webkit-based browsers */
+        -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+        -webkit-line-clamp: 1; /* Number of lines to show */
+        text-overflow: ellipsis;
+      }
+      .anchor{
+        max-height: 80%;
+      }
+      .heading{
+        text-align: right; 
+        margin-right: 230px; 
+        margin-bottom: 5px; 
+        color: #004b87;
+      }
+      
+      @media (min-width: 1440px) {
+        .side-news-item h2{
+          text-align: right;
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 5px;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+    
+        }
+        .main-news h2{
+          overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+        }
+        #PATH_106_i{
+          width: 135px;
+        }
+        #PATH_106_j{
+          width: 130px;
+        }
+        #jhelum-element{
+          width: 120px;
+        }
+        .national-news{
+          direction: rtl;
+        }
+        .international-news{
+          direction: rtl;
+        }
+        .button{
+          height: 65%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        margin-top: 15px;
+        
+      }
+      .weather-button{
+        position:static;
+        margin-right: 0px;
+        border: 3px solid rgb(255 146 146);
+      }
+        .jhelum-inner-1{
+          display: flex;
+          flex-direction: column;
+          width: 30%;
+          direction: rtl;
+          
+        }
+        .jhelum-inner-2{
+          width: 70%;
+          direction: rtl;
+        }
+        .et-i{
+          position: absolute;
+          margin-top: -38px;
+        }
+        .et-n{
+          position: absolute;
+          margin-top: -38px;
+        }
+        .et-j{
+          position: absolute;
+          margin-top: -38px;
+        }
+        .et-m{
+          position: absolute;
+          margin-top:-38px ;
+        }
+        .et-tt{
+          position: absolute;
+          margin-top: -38px;
+        }
+        .editor-name {
+          margin-left: 25px;
+          position: relative;
+          font-weight: bold;
+          font-size: 15px;
+          color: wheat;
+          gap: 15px;
+          display: flex;
+          width: 80%;
+          align-items: end;
+        }
+        .navbar {
+          height: 66px;
+        }
+        .navbar-content a {
+          padding-top: 16px;
+          padding-bottom: 18px;
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+        .close-icon {
+          display: none;
+        }
+        .news-container{
+          width: 70%;
+          margin-top: 55px;
+          
+        }
+        .hr-line{
+          width: 63vw;
+          
+        }
+        .side-news{
+          width: 40%;
+          height: 100%;
+        }
+        .main-news{
+          width: 60%;
+          height: 100%;
+        }
+        .main-news a{
+          max-height: 100%;
+        }
+        .main-news img{
+          width: 100%;
+          height: 400px;
+        }
+        .jhelum-news-container{
+          width: 70%;
+          margin-top: 30px;
+        }
+      
+        .heading{
+          margin-right: 350px;
+        }
+        .national-news{
+          width: 70%;
+          margin-top: 45px;
+        }
+        .international-news{
+          width: 70%;
+          margin-top: 45px;
+        }
+        #Group_190 {
+          position: relative;
+          width: 163.23px;
+          height: 40.029px;
+          /* left: 1170px; */
+          overflow: visible;
+      }  
+      #Group_189 {
+          position: relative;
+          width: 120px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }   
+      #Group_192 {
+          position: relative;
+          width: 114.306px;
+          height: 40.029px;
+          /* left: 1170px;
+          top: 233.971px; */
+          overflow: visible;
+      }
+      #Group_191 {
+          position:relative;
+          width: 90px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }
+      #Path_107 {
+          fill: transparent;
+          stroke: rgba(224,224,224,1);
+          stroke-width: 3px;
+          stroke-linejoin: miter;
+          stroke-linecap: butt;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Path_107 {
+          overflow: visible;
+          position: relative;;
+          width: 1100px;
+          height: 1px;
+          /* left: 350px;
+          top: 274px; */
+          transform: matrix(1,0,0,1,0,0);
+      }
+      #Group_198 {
+        position: relative;
+        width: 80px;
+        height: 20px;
+        bottom: 41px;
+        right: 30px;
+        overflow: visible;
+      }
+      #Group_191_c {
+        position: relative;
+        width: 90px;
+        height: 32px;
+        overflow: visible;
+      }
+      #Group_194 {
+                position: relative;
+        width: 87px;
+        height: 31px;
+        bottom: 60px;
+        right: 33px;
+        overflow: visible;
+      }
+      .Path_106 {
+        overflow: visible;
+        position: relative;
+        width: 87px;
+        height: 31px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+      }
+      
+      #Path_106 {
+          fill: rgba(0,122,61,1);
+      }
+      #ndb_1 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 96px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 21px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_2 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 100px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 21px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_3 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 93px;
+        left: 0px;
+        right: 55px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_4 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 93px;
+        left: 0px;
+        right: 36px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_5 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 96px;
+        left: 0px;
+        right: 53px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .element-tag{
+        height: 30px;
+        width: 120px;
+      }
+      .animation{
+        position: relative;
+        width: 35px;
+        height: 35px;
+        bottom: 39px;
+      }
+      #Group_190_i {
+          position: relative;
+          width: 163.23px;
+          height: 40.029px;
+          /* left: 1170px; */
+          overflow: visible;
+      }  
+      #Group_189_i {
+          position: relative;
+          width: 120px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }   
+      #Group_192_i {
+          position: relative;
+          width: 114.306px;
+          height: 40.029px;
+          /* left: 1170px;
+          top: 233.971px; */
+          overflow: visible;
+      }
+      #Group_191_i {
+          position:relative;
+          width: 90px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }
+      #Path_107_i {
+          fill: transparent;
+          stroke: rgba(224,224,224,1);
+          stroke-width: 3px;
+          stroke-linejoin: miter;
+          stroke-linecap: butt;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Path_107_i {
+          overflow: visible;
+          position: relative;;
+          width: 1100px;
+          height: 1px;
+          /* left: 350px;
+          top: 274px; */
+          transform: matrix(1,0,0,1,0,0);
+      }
+      #Group_198_i {
+        position: relative;
+        width: 80px;
+        height: 20px;
+        bottom: 41px;
+        right: 30px;
+        overflow: visible;
+      }
+      #Group_191_c_i {
+        position: relative;
+        width: 90px;
+        height: 32px;
+        overflow: visible;
+      }
+      #Group_194_i{
+                position: relative;
+        width: 87px;
+        height: 31px;
+        bottom: 60px;
+        right: 33px;
+        overflow: visible;
+      }
+      .Path_106_i {
+        overflow: visible;
+        position: relative;
+        width: 87px;
+        height: 31px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+      }
+      
+      #Path_106_i {
+          fill: rgba(0,122,61,1);
+      }
+      #n__db_i {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 94px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        /* font-family: Helvetica Neue; */
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .element-tag_i{
+        height: 30px;
+        width: 120px;
+        
+      }
+      /* .jhelum-news-container{
+        direction: rtl;
+      }
+      .national-news{
+        direction: rtl;
+      }
+      .international-news{
+        direction: rtl;
+      } */
+       
+      }
+      @media (min-width: 768px) and (max-width: 1439px) {
+        .login-icon {
+          color: #004b87;
+          right: 0px;
+        }
+        .login-icon-show {
+          position: relative;
+          bottom: 2px;
+        }
+        .jhelum-inner-1{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+        .jhelum-inner-2{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+        #PATH_106_i{
+          width: 135px;
+        }
+        #PATH_106_j{
+          width: 130px;
+        }
+        #ndb_1 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 96px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 21px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_2 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 100px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 21px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_3 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 93px;
+        left: 0px;
+        right: 55px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_4 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 93px;
+        left: 0px;
+        right: 36px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_5 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 96px;
+        left: 0px;
+        right: 53px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 1);
+      }
+        .price-tag{
+        display: flex;
+        
+      }
+      .update {
+        display: inline-block;
+        
+        width: 50px;
+        height: 38px;
+        
+        background-color: #CC0008;
+        -webkit-border-radius: 3px 4px 4px 3px;
+        -moz-border-radius: 3px 4px 4px 3px;
+        border-radius: 3px 0px 0px 3px;
+        
+        border-left: 1px solid #CC0008;
+      
+        /* This makes room for the triangle */
+        
+        font-size: 12px;
+        position: relative;
+        right: 12px;
+        color: white;
+        line-height: 38px;
+      
+        padding: 0 10px 0 10px;
+      }
+      
+      /* Makes the triangle */
+      .update:before {
+        content: "";
+        position: absolute;
+        display: block;
+        /* left: -19px; */
+        width: 0;
+        height: 0;
+        border-top: 19px solid transparent;
+        border-bottom: 19px solid transparent;
+        border-right: 19px solid #CC0008;
+      }
+      .strips{
+        position: relative;
+        right: 10px;
+        display: flex;
+        gap: 2px;
+      }
+      .strip{
+        height: 38px;
+        width: 4px;
+        background-color: #CC0008;
+      }
+      marquee{
+        width: 75%;
+        margin-left: auto;
+        margin-right: 0px;
+      }
+      .editor-name {
+          margin-left: 15px;
+          position: relative;
+          font-weight: bold;
+          font-size: 13px;
+          color: wheat;
+          gap: 10px;
+          display: flex;
+          width: 80%;
+          align-items: end;
+        }
+        .navbar {
+          justify-content: start;
+        }
+        .close-icon {
+          display: block;
+        }
+        .navbar-content {
+          color: white;
+          display: none;
+          flex-direction: column;
+          position: fixed;
+          top: 1rem;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #004b87;
+          z-index: 10;
+          /* justify-content: end; */
+          align-items: start;
+        }
+
+        .navbar-content.show {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        .menu-icon {
+          display: block;
+          padding: 1rem;
+          align-items: start;
+        }
+
+        .navbar-content a {
+          color: white;
+          padding: 1em;
+          font-size: 1em;
+          font: bold 20px;
+          letter-spacing: 0px;
+          opacity: 1;
+          width: 100%;
+          text-align: justify;
+        }
+        .svg {
+          display: block;
+        }
+
+        .close-icon {
+          position: absolute;
+          right: 50%;
+          transform: translateX(50%);
+          font-size: 1em;
+          cursor: pointer;
+          color: white;
+        }
+        .burger-options {
+          margin-top: 10%;
+          font-size: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
+        .footerlogo {
+          /* Layout Properties */
+          /* UI Properties */
+          background: transparent url("img/logo.png") 0% 0% no-repeat
+            padding-box;
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 10px;
+          opacity: 1;
+          position: absolute; /* Absolute positioning to overlap the footer */
+          top: 25%; /* Adjust to place the logo correctly */
+          left: 85%;
+          transform: translateX(-30%);
+          width: 100px; /* Adjust the size as needed */
+          height: 100px;
+        }
+        footer {
+          /* Layout Properties */
+          position: relative;
+          bottom: 0;
+          left: 0px;
+          width: 100%;
+          height: 250px;
+          /* UI Properties */
+          background: #004b87 0% 0% no-repeat padding-box;
+          opacity: 1;
+        }
+        .foot {
+          display: flex;
+          justify-content: center;
+        }
+        .foot-content {
+          margin-top: 40px;
+        }
+        .foot-content img {
+          margin: 0 5px;
+          height: 55px;
+          width: 55px;
+        }
+        .line1 {
+          /* UI Properties */
+          border: 2px dashed #ffffff;
+          opacity: 1;
+          width: 300px;
+          height: 0px;
+          margin-top: 15px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 2px;
+        }
+        .line2 {
+          /* UI Properties */
+          border: 2px dashed #ffffff;
+          opacity: 1;
+          width: 300px;
+          height: 0px;
+          margin-top: 2px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .copyright {
+          /* UI Properties */
+          text-align: center;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 17px;
+          letter-spacing: 0px;
+          color: #ffffff;
+        }
+        .text-end {
+          text-align: center;
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 17px;
+          letter-spacing: 0px;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .text-end0 {
+          text-align: center;
+          color: #ffffff;
+          width: 80%;
+          letter-spacing: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .last-container {
+          margin-top: 15px;
+        }
+        .news-container{
+          flex-direction: column;
+        }
+        .main-news{
+          width: 100%;
+          padding: 0px;
+          border-radius:10px ;
+        }
+        .side-news-item h2{
+        text-align: right;
+        font-weight: bold;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+        }
+        .side-news-item p {
+          margin-right: 0px;
+    font-size: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+        .side-news{
+          width: 100%;
+        }
+        .side-news-item{
+          border-radius: 10px;
+          width: 100%;
+        }
+        .side-news-item img{
+          width: 110px;
+          height: 100px;
+          padding: 5px;
+          border-radius: 10px;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .main-news h2 {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+
+        .main-news img{
+          width: 99%;
+          border-radius: 10px;
+          padding: 3px;
+        }
+        .main-news p{
+          margin-right: 10px;
+          font-size: 16px;
+          margin-top: 0px;
+        }
+        .description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.hr-line{
+  width: 70%;
+}
+.jhelum-news-container{
+  flex-direction: column;
+}
+.jhelum-news{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.jhelum-news-card{
+  border-radius:10px ;
+  width: 100%;
+  flex-direction: row;
+  height: 118px;
+}
+.jhelum-news-card img{
+  width: 110px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.jhelum-news-content{
+  display: flex;
+  flex-direction: column;
+}
+.jhelum-news-card h3{
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 0px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.time {
+          /* UI Properties */
+          text-align: right;
+          font-weight: bold;
+          font-size: 12px;
+          letter-spacing: 0px;
+          color: #333333;
+          opacity: 0.5;
+          direction: rtl;
+        }
+        .jhelum-news-card p{
+          margin-top: 0px;
+          margin-right: 0px;
+        }
+        .weather-fetching{
+          padding: 0px;
+          width: 100%;
+          height: 250px;
+        }
+        .weather-button{
+          top: 50px;
+        }
+        .national-news{
+          display: flex;
+          flex-direction: column;
+         
+        }
+        .national-news-card{
+          flex-direction: row;
+          height: 118px;
+          border-radius:10px ;
+        }
+        .national-news-card img{
+          width: 110px;
+          height: 100px;
+          padding: 5px;
+          border-radius: 10px;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .national-news-card h3{
+          font-size: 16px;
+  font-weight: bold;
+  margin-right: 0px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+        }
+        .national-news-card p{
+          margin-top: 0px;
+          margin-right: 0px;
+        }
+        .international-news{
+          display: flex;
+          flex-direction: column;
+        }
+        .international-news-card{
+          flex-direction: row;
+          height: 118px;
+          border-radius:10px ;
+        }
+        .international-news-card img{
+          width: 110px;
+          height: 100px;
+          padding: 5px;
+          border-radius: 10px;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .international-news-card h3{
+          font-size: 16px;
+  font-weight: bold;
+  margin-right: 0px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+        }
+        .international-news-card p{
+          margin-top: 0px;
+          margin-right: 0px;
+        }
+         #Group_190 {
+          position: relative;
+          width: 163.23px;
+          height: 40.029px;
+          /* left: 1170px; */
+          overflow: visible;
+      }  
+      #Group_189 {
+          position: relative;
+          width: 120px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }   
+      #Group_192 {
+          position: relative;
+          width: 114.306px;
+          height: 40.029px;
+          /* left: 1170px;
+          top: 233.971px; */
+          overflow: visible;
+      }
+      #Group_191 {
+          position:relative;
+          width: 90px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }
+      #Path_107 {
+          fill: transparent;
+          stroke: rgba(224,224,224,1);
+          stroke-width: 3px;
+          stroke-linejoin: miter;
+          stroke-linecap: butt;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Path_107 {
+          overflow: visible;
+          position: relative;;
+          width: 1100px;
+          height: 1px;
+          /* left: 350px;
+          top: 274px; */
+          transform: matrix(1,0,0,1,0,0);
+      }
+      #Group_198 {
+        position: relative;
+        width: 80px;
+        height: 20px;
+        bottom: 41px;
+        right: 30px;
+        overflow: visible;
+      }
+      #Group_191_c {
+        position: relative;
+        width: 90px;
+        height: 32px;
+        overflow: visible;
+      }
+      #Group_194 {
+                position: relative;
+        width: 87px;
+        height: 31px;
+        bottom: 60px;
+        right: 33px;
+        overflow: visible;
+      }
+      .Path_106 {
+        overflow: visible;
+        position: relative;
+        width: 87px;
+        height: 31px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+      }
+      
+      #Path_106 {
+          fill: rgba(0,122,61,1);
+      }
+      #n__db {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 94px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .element-tag{
+        height: 30px;
+        width: 120px;
+      }
+      .animation{
+        position: relative;
+        width: 35px;
+        height: 35px;
+        bottom: 39px;
+      }
+      #Group_190_i {
+          position: relative;
+          width: 163.23px;
+          height: 40.029px;
+          /* left: 1170px; */
+          overflow: visible;
+      }  
+      #Group_189_i {
+          position: relative;
+          width: 120px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }   
+      #Group_192_i {
+          position: relative;
+          width: 114.306px;
+          height: 40.029px;
+          /* left: 1170px;
+          top: 233.971px; */
+          overflow: visible;
+      }
+      #Group_191_i {
+          position:relative;
+          width: 90px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }
+      #Path_107_i {
+          fill: transparent;
+          stroke: rgba(224,224,224,1);
+          stroke-width: 3px;
+          stroke-linejoin: miter;
+          stroke-linecap: butt;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Path_107_i {
+          overflow: visible;
+          position: relative;;
+          width: 1100px;
+          height: 1px;
+          /* left: 350px;
+          top: 274px; */
+          transform: matrix(1,0,0,1,0,0);
+      }
+      #Group_198_i {
+        position: relative;
+        width: 80px;
+        height: 20px;
+        bottom: 41px;
+        right: 30px;
+        overflow: visible;
+      }
+      #Group_191_c_i {
+        position: relative;
+        width: 90px;
+        height: 32px;
+        overflow: visible;
+      }
+      #Group_194_i{
+                position: relative;
+        width: 87px;
+        height: 31px;
+        bottom: 60px;
+        right: 33px;
+        overflow: visible;
+      }
+      .Path_106_i {
+        overflow: visible;
+        position: relative;
+        width: 87px;
+        height: 31px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+      }
+      
+      #Path_106_i {
+          fill: rgba(0,122,61,1);
+      }
+      #n__db_i {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 94px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        /* font-family: Helvetica Neue; */
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .element-tag_i{
+        height: 30px;
+        width: 120px;
+        
+      }
+      .jhelum-news-container{
+        direction: rtl;
+      }
+      .national-news{
+        direction: rtl;
+      }
+      .international-news{
+        direction: rtl;
+      }
+      .weather-fetching{
+        background: #004b87 0% 0% no-repeat padding-box;
+      }
+      #jhelum-weather-info{
+        color: white;
+        margin-top: 30px;
+      }
+      .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        
+      }
+      .weather-button{
+        position:static;
+        margin-right: 0px;
+        border: 3px solid rgb(255 146 146);
+      }
+      }
+      @media (min-width: 400px) and (max-width: 767px) {
+        
+        .login-icon {
+          color: #004b87;
+          right: 0px;
+        }
+        .login-icon-show {
+          position: relative;
+          bottom: 2px;
+        }
+
+        .jhelum-inner-1{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+        .jhelum-inner-2{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+        #PATH_106_i{
+          width: 135px;
+        }
+        #PATH_106_j{
+          width: 130px;
+        }
+        #ndb_1 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 96px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 21px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_2 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 100px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 21px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_3 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 93px;
+        left: 0px;
+        right: 55px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_4 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 93px;
+        left: 0px;
+        right: 36px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      #ndb_5 {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 96px;
+        left: 0px;
+        right: 53px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 1);
+      }
+        .price-tag{
+        display: flex;
+        
+      }
+      .update {
+        display: inline-block;
+        
+        width: 50px;
+        height: 38px;
+        
+        background-color: #CC0008;
+        -webkit-border-radius: 3px 4px 4px 3px;
+        -moz-border-radius: 3px 4px 4px 3px;
+        border-radius: 3px 0px 0px 3px;
+        
+        border-left: 1px solid #CC0008;
+      
+        /* This makes room for the triangle */
+        
+        font-size: 12px;
+        position: relative;
+        right: 12px;
+        color: white;
+        line-height: 38px;
+      
+        padding: 0 10px 0 10px;
+      }
+      
+      /* Makes the triangle */
+      .update:before {
+        content: "";
+        position: absolute;
+        display: block;
+        /* left: -19px; */
+        width: 0;
+        height: 0;
+        border-top: 19px solid transparent;
+        border-bottom: 19px solid transparent;
+        border-right: 19px solid #CC0008;
+      }
+      .strips{
+        position: relative;
+        right: 10px;
+        display: flex;
+        gap: 2px;
+      }
+      .strip{
+        height: 38px;
+        width: 4px;
+        background-color: #CC0008;
+      }
+      marquee{
+        width: 75%;
+        margin-left: auto;
+        margin-right: 0px;
+      }
+        .editor-name {
+          margin-left: 5px;
+          position: relative;
+          font-weight: bold;
+          font-size: 10px;
+          color: wheat;
+          gap: 10px;
+          display: flex;
+          width: 90%;
+          align-items: center;
+        }
+        .navbar {
+          justify-content: start;
+        }
+        .navbar-content {
+          color: white;
+          display: none;
+          flex-direction: column;
+          position: fixed;
+          top: 1rem;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #004b87;
+          z-index: 10;
+          /* justify-content: end; */
+          align-items: start;
+        }
+
+        .navbar-content.show {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        .menu-icon {
+          display: block;
+          padding: 1rem;
+          align-items: start;
+        }
+
+        .navbar-content a {
+          color: white;
+          padding: 1em;
+          font-size: 1em;
+          font: bold 20px;
+          letter-spacing: 0px;
+          opacity: 1;
+          width: 100%;
+          text-align: justify;
+        }
+        .close-icon {
+          position: absolute;
+          right: 50%;
+          transform: translateX(50%);
+          font-size: 1em;
+          cursor: pointer;
+          color: white;
+        }
+        .burger-options {
+          margin-top: 10%;
+          font-size: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
+        .logo {
+          /* Layout Properties */
+          position: relative;
+          top: 0px;
+          left: 80%;
+          width: 70px;
+          height: 70px;
+          /* UI Properties */
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 10px;
+          opacity: 1;
+        }
+        .footerlogo {
+          /* Layout Properties */
+          /* UI Properties */
+          background: transparent url("img/logo.png") 0% 0% no-repeat
+            padding-box;
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 10px;
+          opacity: 1;
+          position: absolute; /* Absolute positioning to overlap the footer */
+          top: 20%; /* Adjust to place the logo correctly */
+          left: 85%;
+          transform: translateX(-30%);
+          width: 60px; /* Adjust the size as needed */
+          height: 60px;
+        }
+        footer {
+          /* Layout Properties */
+          position: relative;
+          bottom: 0;
+          left: 0px;
+          width: 100%;
+          height: 250px;
+          /* UI Properties */
+          background: #004b87 0% 0% no-repeat padding-box;
+          opacity: 1;
+        }
+        .foot {
+          display: flex;
+          justify-content: center;
+        }
+        .foot-content {
+          margin-top: 40px;
+        }
+        .foot-content img {
+          margin: 0 5px;
+          height: 35px;
+          width: 35px;
+        }
+        .line1 {
+          /* UI Properties */
+          border: 1.5px dashed #ffffff;
+          opacity: 1;
+          width: 210px;
+          height: 0px;
+          margin-top: 15px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 2px;
+        }
+        .line2 {
+          /* UI Properties */
+          border: 1.5px dashed #ffffff;
+          opacity: 1;
+          width: 210px;
+          height: 0px;
+          margin-top: 2px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .copyright {
+          /* UI Properties */
+          text-align: center;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 13px;
+          letter-spacing: 0px;
+          color: #ffffff;
+        }
+        .text-end {
+          text-align: center;
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 15px;
+          letter-spacing: 0px;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .text-end0 {
+          text-align: center;
+          color: #ffffff;
+          width: 80%;
+          letter-spacing: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 12px;
+        }
+        /* .last-container {
+          margin-top: 15px;
+        } */
+        .news-container{
+          flex-direction: column;
+        }
+        .main-news{
+          width: 100%;
+          padding: 0px;
+          border-radius:10px ;
+        }
+        .side-news-item h2{
+        text-align: right;
+        font-weight: bold;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #008080;
+        opacity: 1;
+        overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+        }
+        .side-news-item p {
+          margin-right: 0px;
+    font-size: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+        .side-news{
+          width: 100%;
+        }
+        .side-news-item{
+          border-radius: 10px;
+          width: 100%;
+        }
+        .side-news-item img{
+          width: 110px;
+          height: 100px;
+          padding: 5px;
+          border-radius: 10px;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .main-news h2 {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+
+        .main-news img{
+          width: 98%;
+          border-radius: 10px;
+          padding: 3px;
+        }
+        .main-news p{
+          margin-right: 10px;
+          font-size: 16px;
+          margin-top: 0px;
+        }
+        .description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.hr-line{
+  width: 70%;
+}
+.jhelum-news-container{
+  flex-direction: column;
+}
+.jhelum-news{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.jhelum-news-card{
+  border-radius:10px ;
+  width: 100%;
+  flex-direction: row;
+  height: 118px;
+}
+.jhelum-news-card img{
+  width: 110px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.jhelum-news-content{
+  display: flex;
+  flex-direction: column;
+}
+.jhelum-news-card h3{
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 0px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.time {
+          /* UI Properties */
+          text-align: right;
+          font-weight: bold;
+          font-size: 12px;
+          letter-spacing: 0px;
+          color: #333333;
+          opacity: 0.5;
+          direction: rtl;
+        }
+        .jhelum-news-card p{
+          margin-top: 0px;
+          margin-right: 0px;
+        }
+        .weather-fetching{
+          padding: 0px;
+          width: 100%;
+          height: 250px;
+        }
+        .weather-button{
+          top: 50px;
+        }
+        .national-news{
+          display: flex;
+          flex-direction: column;
+         
+        }
+        .national-news-card{
+          flex-direction: row;
+          height: 118px;
+          border-radius:10px ;
+        }
+        .national-news-card img{
+          width: 110px;
+          height: 100px;
+          padding: 5px;
+          border-radius: 10px;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .national-news-card h3{
+          font-size: 16px;
+  font-weight: bold;
+  margin-right: 0px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+        }
+        .national-news-card p{
+          margin-top: 0px;
+          margin-right: 0px;
+        }
+        .international-news{
+          display: flex;
+          flex-direction: column;
+        }
+        .international-news-card{
+          flex-direction: row;
+          height: 118px;
+          border-radius:10px ;
+        }
+        .international-news-card img{
+          width: 110px;
+          height: 100px;
+          padding: 5px;
+          border-radius: 10px;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .international-news-card h3{
+          font-size: 16px;
+  font-weight: bold;
+  margin-right: 0px;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+        }
+        .international-news-card p{
+          margin-top: 0px;
+          margin-right: 0px;
+        }
+         #Group_190 {
+          position: relative;
+          width: 163.23px;
+          height: 40.029px;
+          /* left: 1170px; */
+          overflow: visible;
+      }  
+      #Group_189 {
+          position: relative;
+          width: 120px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }   
+      #Group_192 {
+          position: relative;
+          width: 114.306px;
+          height: 40.029px;
+          /* left: 1170px;
+          top: 233.971px; */
+          overflow: visible;
+      }
+      #Group_191 {
+          position:relative;
+          width: 90px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }
+      #Path_107 {
+          fill: transparent;
+          stroke: rgba(224,224,224,1);
+          stroke-width: 3px;
+          stroke-linejoin: miter;
+          stroke-linecap: butt;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Path_107 {
+          overflow: visible;
+          position: relative;;
+          width: 1100px;
+          height: 1px;
+          /* left: 350px;
+          top: 274px; */
+          transform: matrix(1,0,0,1,0,0);
+      }
+      #Group_198 {
+        position: relative;
+        width: 80px;
+        height: 20px;
+        bottom: 41px;
+        right: 30px;
+        overflow: visible;
+      }
+      #Group_191_c {
+        position: relative;
+        width: 90px;
+        height: 32px;
+        overflow: visible;
+      }
+      #Group_194 {
+                position: relative;
+        width: 87px;
+        height: 31px;
+        bottom: 60px;
+        right: 33px;
+        overflow: visible;
+      }
+      .Path_106 {
+        overflow: visible;
+        position: relative;
+        width: 87px;
+        height: 31px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+      }
+      
+      #Path_106 {
+          fill: rgba(0,122,61,1);
+      }
+      #n__db {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 94px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .element-tag{
+        height: 30px;
+        width: 120px;
+      }
+      .animation{
+        position: relative;
+        width: 35px;
+        height: 35px;
+        bottom: 39px;
+      }
+      #Group_190_i {
+          position: relative;
+          width: 163.23px;
+          height: 40.029px;
+          /* left: 1170px; */
+          overflow: visible;
+      }  
+      #Group_189_i {
+          position: relative;
+          width: 120px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }   
+      #Group_192_i {
+          position: relative;
+          width: 114.306px;
+          height: 40.029px;
+          /* left: 1170px;
+          top: 233.971px; */
+          overflow: visible;
+      }
+      #Group_191_i {
+          position:relative;
+          width: 90px;
+          height: 30px;
+          /* left: 0px;
+          top: 0px; */
+          overflow: visible;
+      }
+      #Path_107_i {
+          fill: transparent;
+          stroke: rgba(224,224,224,1);
+          stroke-width: 3px;
+          stroke-linejoin: miter;
+          stroke-linecap: butt;
+          stroke-miterlimit: 4;
+          shape-rendering: auto;
+      }
+      .Path_107_i {
+          overflow: visible;
+          position: relative;;
+          width: 1100px;
+          height: 1px;
+          /* left: 350px;
+          top: 274px; */
+          transform: matrix(1,0,0,1,0,0);
+      }
+      #Group_198_i {
+        position: relative;
+        width: 80px;
+        height: 20px;
+        bottom: 41px;
+        right: 30px;
+        overflow: visible;
+      }
+      #Group_191_c_i {
+        position: relative;
+        width: 90px;
+        height: 32px;
+        overflow: visible;
+      }
+      #Group_194_i{
+                position: relative;
+        width: 87px;
+        height: 31px;
+        bottom: 60px;
+        right: 33px;
+        overflow: visible;
+      }
+      .Path_106_i {
+        overflow: visible;
+        position: relative;
+        width: 87px;
+        height: 31px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+      }
+      
+      #Path_106_i {
+          fill: rgba(0,122,61,1);
+      }
+      #n__db_i {
+        position: relative;
+        overflow: visible;
+        width: 75px;
+        bottom: 94px;
+        left: 0px;
+        right: 21px;
+        white-space: nowrap;
+        text-align: left;
+        /* font-family: Helvetica Neue; */
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .element-tag_i{
+        height: 30px;
+        width: 120px;
+        
+      }
+      .jhelum-news-container{
+        direction: rtl;
+      }
+      .national-news{
+        direction: rtl;
+      }
+      .international-news{
+        direction: rtl;
+      }
+      .weather-fetching{
+        background: #004b87 0% 0% no-repeat padding-box;
+      }
+      #jhelum-weather-info{
+        color: white;
+        margin-top: 30px;
+      }
+      .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        
+      }
+      .weather-button{
+        position:static;
+        margin-right: 0px;
+        border: 3px solid rgb(255 146 146);
+      }
+     
+      }
+      
+    
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="editor-name">
+        <div class="ed-name">ریزیڈنٹ ایڈیٹر ادریس چودھری</div>
+        <div class="ed-name">ایڈیٹر مظہر اقبال چودھری</div>
+        <div class="ed-name">چیف ایڈیٹر طارق محمود چودھری</div>
+      </div>
+      <img class="logo" src="/images/logo-final.jpg" alt="jhelum news logo" />
+    </header>
+    <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <div class="navbar-content" id="menu">
+        <div class="close-icon" onclick="toggleMenu()">&#10006;</div>
+        <div class="burger-options">
+          <a class="home" href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="20"
+              height="20"
+              viewBox="0 0 50 50"
+              fill="gray"
+            >
+              <path
+                d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 19.710938 L 47.380859 20.789062 C 47.570859 20.929063 47.78 21 48 21 C 48.3 21 48.589063 20.869141 48.789062 20.619141 C 49.129063 20.179141 49.049141 19.550938 48.619141 19.210938 L 25.619141 1.2597656 C 25.434141 1.1197656 25.2175 1.0507812 25 1.0507812 z M 35 5 L 35 6.0507812 L 41 10.730469 L 41 5 L 35 5 z"
+              ></path></svg
+            >صفحۂ اول
+          </a>
+          <a class="jhelum-page" href="/jhelum_news">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 122.88 106.35"
+              width="20px"
+              height="20px"
+            >
+              <path
+                d="M35.57,103.26H26.06V88.52a1,1,0,0,0-1-1H13.09a1.06,1.06,0,0,0-1.06,1v14.74H10.34v3.09h102.2v-3.09h-1.69V88.52a1.06,1.06,0,0,0-1.06-1H97.87a1,1,0,0,0-1.05,1v14.74H74.44V82.42A1.41,1.41,0,0,0,73,81H49.75a1.41,1.41,0,0,0-1.41,1.41v20.84H32.49V32.87H3v70.39h7.39v3.09H1.41A1.41,1.41,0,0,1,0,104.94V32a2,2,0,0,1,.61-1.46h0a2,2,0,0,1,1.45-.6H32.49V2.25A2.47,2.47,0,0,1,33.21.73h0A2.45,2.45,0,0,1,35,0H87.83a2.42,2.42,0,0,1,1.74.72l.11.12a2.45,2.45,0,0,1,.63,1.63V29.92h30.5a2,2,0,0,1,1.45.6h0a2,2,0,0,1,.61,1.46v73a1.41,1.41,0,0,1-1.41,1.41h-8.93v-3.09h7.39V32.87H90.3v70.39H87.21V3.08H35.57V103.26ZM16.43,39H8.81c-.06,0-.12.08-.12.18v4.94c0,.1.06.19.12.19h7.62c.06,0,.12-.08.12-.19V39.13c0-.1-.06-.18-.12-.18Zm0,34.27H8.81c-.06,0-.12.09-.12.18v4.94c0,.09.06.19.12.19h7.62c.06,0,.12-.09.12-.19V73.4c0-.09-.06-.18-.12-.18Zm12.86,0H21.67c-.07,0-.12.09-.12.18v4.94c0,.09.05.19.12.19h7.62c.06,0,.11-.09.11-.19V73.4c0-.09,0-.18-.11-.18ZM16.43,61.79H8.81c-.06,0-.12.09-.12.19v4.94c0,.1.06.19.12.19h7.62c.06,0,.12-.08.12-.19V62c0-.11-.06-.19-.12-.19Zm0-11.42H8.81c-.06,0-.12.08-.12.19V55.5c0,.09.06.19.12.19h7.62c.06,0,.12-.09.12-.19V50.56c0-.11-.06-.19-.12-.19ZM29.29,39H21.67c-.07,0-.12.08-.12.18v4.94c0,.1.05.19.12.19h7.62c.06,0,.11-.08.11-.19V39.13c0-.1,0-.18-.11-.18Zm0,22.84H21.67c-.07,0-.12.09-.12.19v4.94c0,.1.05.19.12.19h7.62c.06,0,.11-.08.11-.19V62c0-.11,0-.19-.11-.19Zm0-11.42H21.67c-.07,0-.12.08-.12.19V55.5c0,.09.05.19.12.19h7.62c.06,0,.11-.09.11-.19V50.56c0-.11,0-.19-.11-.19ZM106.45,39h7.62c.06,0,.12.08.12.18v4.94c0,.1-.06.19-.12.19h-7.62c-.06,0-.12-.08-.12-.19V39.13c0-.1.06-.18.12-.18Zm0,34.27h7.62c.06,0,.12.09.12.18v4.94c0,.09-.06.19-.12.19h-7.62c-.06,0-.12-.09-.12-.19V73.4c0-.09.06-.18.12-.18Zm-12.86,0h7.62c.07,0,.12.09.12.18v4.94c0,.09,0,.19-.12.19H93.59c-.06,0-.11-.09-.11-.19V73.4c0-.09,0-.18.11-.18Zm12.86-11.43h7.62c.06,0,.12.09.12.19v4.94c0,.1-.06.19-.12.19h-7.62c-.06,0-.12-.08-.12-.19V62c0-.11.06-.19.12-.19Zm0-11.42h7.62c.06,0,.12.08.12.19V55.5c0,.09-.06.19-.12.19h-7.62c-.06,0-.12-.09-.12-.19V50.56c0-.11.06-.19.12-.19ZM93.59,39h7.62c.07,0,.12.08.12.18v4.94c0,.1,0,.19-.12.19H93.59c-.06,0-.11-.08-.11-.19V39.13c0-.1,0-.18.11-.18Zm0,22.84h7.62c.07,0,.12.09.12.19v4.94c0,.1,0,.19-.12.19H93.59c-.06,0-.11-.08-.11-.19V62c0-.11,0-.19.11-.19Zm0-11.42h7.62c.07,0,.12.08.12.19V55.5c0,.09,0,.19-.12.19H93.59c-.06,0-.11-.09-.11-.19V50.56c0-.11,0-.19.11-.19ZM43,10.84h8.29a.24.24,0,0,1,.24.23v8.3a.24.24,0,0,1-.24.23H43a.23.23,0,0,1-.23-.23v-8.3a.23.23,0,0,1,.23-.23Zm28.51,0h8.29a.24.24,0,0,1,.24.23v8.3a.24.24,0,0,1-.24.23H71.5a.24.24,0,0,1-.24-.23v-8.3a.24.24,0,0,1,.24-.23Zm-14.26,0h8.3a.23.23,0,0,1,.23.23v8.3a.23.23,0,0,1-.23.23h-8.3a.24.24,0,0,1-.23-.23v-8.3a.24.24,0,0,1,.23-.23ZM43,28.8h8.29a.24.24,0,0,1,.24.24v8.29a.24.24,0,0,1-.24.24H43a.23.23,0,0,1-.23-.24V29A.23.23,0,0,1,43,28.8Zm28.51,0h8.29A.24.24,0,0,1,80,29v8.29a.24.24,0,0,1-.24.24H71.5a.24.24,0,0,1-.24-.24V29a.24.24,0,0,1,.24-.24Zm-14.26,0h8.3a.23.23,0,0,1,.23.24v8.29a.23.23,0,0,1-.23.24h-8.3a.24.24,0,0,1-.23-.24V29a.24.24,0,0,1,.23-.24ZM43,64.73h8.29a.24.24,0,0,1,.24.24v8.29a.24.24,0,0,1-.24.24H43a.23.23,0,0,1-.23-.24V65a.23.23,0,0,1,.23-.24Zm28.51,0h8.29A.24.24,0,0,1,80,65v8.29a.24.24,0,0,1-.24.24H71.5a.24.24,0,0,1-.24-.24V65a.24.24,0,0,1,.24-.24Zm-14.26,0h8.3a.23.23,0,0,1,.23.24v8.29a.23.23,0,0,1-.23.24h-8.3a.24.24,0,0,1-.23-.24V65a.24.24,0,0,1,.23-.24ZM43,46.77h8.29a.24.24,0,0,1,.24.23v8.3a.23.23,0,0,1-.24.23H43a.23.23,0,0,1-.23-.23V47a.23.23,0,0,1,.23-.23Zm28.51,0h8.29A.24.24,0,0,1,80,47v8.3a.23.23,0,0,1-.24.23H71.5a.23.23,0,0,1-.24-.23V47a.24.24,0,0,1,.24-.23Zm-14.26,0h8.3a.23.23,0,0,1,.23.23v8.3a.23.23,0,0,1-.23.23h-8.3A.23.23,0,0,1,57,55.3V47a.24.24,0,0,1,.23-.23Z"
+              /></svg
+            >جہلم خبریں
+          </a>
+          <a class="national-page" href="/national_news">
+            <svg
+              viewBox="0 0 36 36"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              class="iconify iconify--twemoji"
+              preserveAspectRatio="xMidYMid meet"
+              fill="#000000"
+              width="20px"
+              height="20px"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  fill="#004600"
+                  d="M32 5H9v26h23a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4zm-9.5 20.472a7.5 7.5 0 0 1-7.5-7.5c0-3.72 2.711-6.799 6.263-7.39A6.496 6.496 0 0 0 24 22.972a6.496 6.496 0 0 0 5.89-3.763c-.591 3.553-3.67 6.263-7.39 6.263zm5.11-10.424l-1.213 2.022l-.208-2.349l-2.298-.528l2.17-.924l-.207-2.349l1.548 1.779l2.17-.924l-1.212 2.023l1.548 1.779l-2.298-.529z"
+                ></path>
+                <path
+                  fill="#EEE"
+                  d="M4 5a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h5V5H4z"
+                ></path>
+                <path
+                  fill="#FFF"
+                  d="M29.572 11.775l-2.17.924l-1.548-1.779l.207 2.349l-2.17.924l2.298.528l.208 2.349l1.213-2.022l2.298.529l-1.548-1.779z"
+                ></path>
+                <path
+                  fill="#FFF"
+                  d="M24 22.972a6.496 6.496 0 0 1-2.737-12.39c-3.552.592-6.263 3.671-6.263 7.39a7.5 7.5 0 0 0 7.5 7.5c3.72 0 6.799-2.711 7.39-6.263A6.494 6.494 0 0 1 24 22.972z"
+                ></path>
+              </g></svg
+            >قومی خبریں
+          </a>
+          <a class="international-page" href="/international_news">
+            <svg
+              fill="#000000"
+              height="20px"
+              width="20px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              enable-background="new 0 0 512 512"
+              xml:space="preserve"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M93.8,114.6c-4.7,1.1-1.7,0.9-5.6,1.4C71.5,119.6,83.9,122.8,93.8,114.6z M387.5,121.3c1.2-0.8,5.4-4.9-7.7-8.9 c0.8,4.1-2.7,3.7-2.7,6c9.7,8.8,13.7,24.1,26.1,27.3C405.6,134.7,392.2,129.3,387.5,121.3z M84.9,111.4c1.5,8.9,8.2-9.4,8.3-15.9 c-2.6,1.5-5.2,3-7.9,4.2c6.3,3.2,0.8,6.6-6,11.7C65.5,128.6,92.2,98,84.9,111.4z M256,0C114.6,0,0,114.6,0,256 c0,141.3,114.6,256,256,256c141.4,0,256-114.7,256-256C512,114.6,397.4,0,256,0z M262.8,85.8l1.2,0.4c-4.8,6.2,25,24.3,3.6,25.8 c-20,5.7,8.4-5.2-7.1-3.3C268.7,97.3,254,97.1,262.8,85.8z M141.4,102.2c-7.2-6-29.8,8.2-21.9,4.8c19.6-7.7,1.3,0.8,5.9,10 c-4.2,8.7-1.4-8.6-11.8,1.7c-7.5,1.7-25.9,18.7-23.6,13.5c-0.6,8.1-21.9,17.7-24.8,31.2c-7,18.7-1.7-0.7-3-8 c-10-12.7-28.2,21.5-22.8,35c9.1-16,8.4-1.7,1.8,5.4c6.7,12.3-6.1,28.3,6.6,37.4c5.6,1.3,16.8-18.8,11.9,2.1 c3.4-18.1,9.4,4.3,19.1-0.7c0.6,9.5,6.5,5.1,7.8,16.6c16.2-1.2,31,26.2,11.7,31.4c2.9-0.8,8.6,4.3,15.2,0.4 c11.2,8.9,40.7,10,41.5,32c-20.3,9.7-5,36.3-22.6,45.8c-20.2-3-6.9,24.9-15.4,21.7c3.4,20.1-20.4-2.6-11.2,8.5 c16.9,10.4-7.4,8.3,0.2,15.9c-8.5-1.8,5.3,15.8,7.6,22.3c12.2,19.8-10.5-4.4-17.2-11c-6.4-12.8-21.5-37.3-25.7-57.4 c-2.4-29.2-25-48.8-30.2-77.3c-5.2-15.9,14.3-41.4,3.8-50.3c-9.1-7.1-5.4-31.4-10.8-44.2c13.5-58.5,56.4-107.8,107.9-137 c-5.3,3.9,30.3-10.1,26.2-6.7c-1.1,2.5,20.8-9.5,34-11.3c-1.4,0.2-34.3,12-25.2,10.4c-14.1,6.9-1.4,3,5.6-0.5 c-14,10.3-24.8,7.4-40.7,16.5c-16,4.2-12.7,20.8-24.1,29.1c6.7,1.2,23.5-17.3,33.3-23.8c22.5-10.9-11.4,19.8,10,6.6 c-7.2,6.7-5.7,17.4-10.1,20.4C148.2,92.1,159.1,97.9,141.4,102.2z M176.4,56.2c-2.3,3.1-5.5,9.8-7.4,5.7c-2.6,1.3-3.6,6.9-8.5,2.4 c2.9-2.1,5.9-7.1,0.2-4c2.6-2.8,25.8-10.7,24.5-13.7c4.1-2.6,3.7-3.9-1-2.3c-2.4-0.8,5.7-7.6,16.5-8.5c1.5,0,2.1,1-0.6,0.7 c-16.3,5-9.3,3.6,1.7,0c-4.2,2.4-7.1,3.1-7.8,4.2c11-4-0.6,2.9,1.9,2.4c-3.1,1.6,0.5,2.1-5.5,4.4c1.1-0.9-9.8,6.5-3.3,4.3 C180.8,57.8,178,57.9,176.4,56.2z M186,70.5c0.2-9.6,14-15.7,12.3-16.2c17-8-5.9,0.3,7.5-6.9c5-0.5,15.6-16.5,30.3-17.5 c16.2-4.9,8.7,0.3,20.7-4.3l-2.4,2c-2.1,0.3,0.5,4-7.1,9.6c-0.8,8.7-14.5,4.7-7.7,14c-4.4-6.3-11-0.2-2.7,0.4 c-8.9,6.8-29.6,8-39.5,19.3C191,80.1,185.1,77.2,186,70.5z M257.1,102.5c-6.8,16.4-13.4-2.4-1.4-5.4 C258.7,98.7,259.9,99.2,257.1,102.5z M231.5,69.7c-2-7.4-0.4-3.5,11.5-7C251.2,68.6,235.7,72.5,231.5,69.7z M417.7,363.2 c-9.4-16.2,11.4-31.2,18.4-44.8C435.2,334.3,433.2,350,417.7,363.2z M453.1,178.1c-10.2,0.8-19.4,3.2-28.6-2.6 c-21.2-23.2,3.9,26.2,10.9,6c25.2,9.6-0.4,51-16.3,46.7c-8.9-19.2-19.9-40.3-39.3-49.7c14.9,16.5,22.3,36.8,38.3,51.7 c1.1,20.8,22.2-7.6,20.9,8.5c2,27.7-31.3,44.3-25.5,72.1c12.4,25.3-23.9,29.9-19.8,52.6c-14.6,16.3-30.2,38.3-56.4,34.8 c0-13.8-7-25.5-8.6-39.7c-14.2-18,15-37.3-3.1-56.1c-20.9-4.7,4.3-33.5-17.2-30.8c-12.9-12.9-31.8-0.4-50.3-0.3 c-23.2,2.2-47.1-28.5-36.8-50.2c-8.2-22.6,26-29.2,26.9-49.1c16.4-13.7,39.7-12,61.9-15.2c-1.6,15.9,15.2,16,27.9,21.3 c7.1-17.2,29.2,2.8,44.3-8.1c5.2-25.4-14.7-10.1-26.1-18.2c-13.8-20.2,29.5-10.4,25-21c-16.8-0.1-7.3-20.7-19.2-9.2 c10.7,1.9-1.9,10.3-1.6,0.7c-16.2-4.7-0.6,18.4-8.8,20.6c-12.5-5.2-6.6,5.9-5.3,7.6c-5.4,11.7-12-17.2-27.3-16.4 c-15.2-13.9-6,6.3,7.2,9.6c-2.8,0.8,1.6,12.3-1.9,7.4c-10.9-15-31.6-25-43.9-6.6c-1.3,17.2-36.3,22.1-30.7,2 c-8.2-20.8,25.4-0.6,22.3-17.2c-21.6-14.3,5.9-9.7,13.2-23.1c16.6,0.5,0.7-13.6,8.5-17.7c-0.8,15.3,12.7,12.4,23.4,9.5 c-2.6-8.8,6.4-8.5,0.9-15.8c24.8-9.9-18.9,4.6-10.1-17.1c-10.7-7.4-4.5,16.3,0,18.8c0.3,7.3-5.9,16.3-14.4,1 c-12.4,8.1-11.1-8.2-11.9-6.5c-1.4-6.3,9.4-6.6,9.5-17.6c-0.9-7-0.7-10.7,4.3-11.1c0.4,1,20.5,1.3,27.6,9.6 c-19.4-3.9-2.9,3.2,5.8,7.2c-9.3-7.3,3.7,0-3.9-8.3c3,0.6-8.3-11.4,3.3-0.9c-6.3-7.5,12.3-5.3,1.3-10.9c16.1,4.5,6.6,0.4-2.9-3.7 c-26.2-15.6,46.3,21.1,16.7,4.8c18.9,4.1-40.4-14.6-13.4-6.4c-10.3-4.5-0.3-2,9,0.9c-16.7-5.2-41.7-14.9-40.7-15.3 c5.8,0.4,11.5,1.7,17,3.3c17.1,5.1-4.9-1.2-0.2-1.1C373.8,44,425.3,83.4,456.6,134.9c7.3,7.7,27.2,58.6,16.8,36 c4.7,18,5.4,37.4,7.9,55.8c-5.2-5.8-11-27.2-16-39.1C463.2,192.2,460.8,181.1,453.1,178.1z"
+                ></path>
+              </g></svg
+            >بین الاقوامی خبریں
+          </a>
+          <a class="about-page" href="/about_us">
+            <svg
+              fill="#000000"
+              height="20px"
+              width="20px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 502.643 502.643"
+              xml:space="preserve"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <path
+                      d="M251.256,237.591c37.166,0,67.042-30.048,67.042-66.977c0.043-37.037-29.876-66.999-67.042-66.999 c-36.908,0-66.869,29.962-66.869,66.999C184.387,207.587,214.349,237.591,251.256,237.591z"
+                    ></path>
+                    <path
+                      d="M305.032,248.506H197.653c-19.198,0-34.923,17.602-34.923,39.194v107.854c0,1.186,0.604,2.243,0.669,3.473h175.823 c0.129-1.229,0.626-2.286,0.626-3.473V287.7C339.912,266.108,324.187,248.506,305.032,248.506z"
+                    ></path>
+                    <path
+                      d="M431.588,269.559c29.832,0,53.754-24.008,53.754-53.668s-23.922-53.711-53.754-53.711 c-29.617,0-53.582,24.051-53.582,53.711C377.942,245.53,401.972,269.559,431.588,269.559z"
+                    ></path>
+                    <path
+                      d="M474.708,278.317h-86.046c-15.445,0-28.064,14.107-28.064,31.472v86.413c0,0.928,0.453,1.812,0.518,2.826h141.03 c0.065-1.014,0.496-1.898,0.496-2.826v-86.413C502.707,292.424,490.11,278.317,474.708,278.317z"
+                    ></path>
+                    <path
+                      d="M71.011,269.559c29.789,0,53.733-24.008,53.733-53.668S100.8,162.18,71.011,162.18c-29.638,0-53.603,24.051-53.603,53.711 S41.373,269.559,71.011,269.559L71.011,269.559z"
+                    ></path>
+                    <path
+                      d="M114.109,278.317H27.977C12.576,278.317,0,292.424,0,309.789v86.413c0,0.928,0.453,1.812,0.539,2.826h141.03 c0.065-1.014,0.475-1.898,0.475-2.826v-86.413C142.087,292.424,129.489,278.317,114.109,278.317z"
+                    ></path>
+                  </g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                  <g></g>
+                </g>
+              </g></svg
+            >ہمارے بارے میں
+          </a>
+          <a class="contact-page" href="/contact_us">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 122.88 84.04"
+              width="20px"
+              height="20px"
+            >
+              <path
+                d="M34.11,3h83a5.8,5.8,0,0,1,5.79,5.79V70.27a5.76,5.76,0,0,1-1,3.25,2.32,2.32,0,0,1-.55.82,2.2,2.2,0,0,1-.54.38,5.78,5.78,0,0,1-3.7,1.35H68a15.44,15.44,0,0,0,.42-4.45h47.22L84.8,39.23,74.62,47.91h0a2.22,2.22,0,0,1-2.84,0L61.1,39.23h0l-9.69,9.71A12.4,12.4,0,0,0,47,47.07L57.64,36.41,37.91,20.32a14,14,0,0,0-.68-3.42l-.79-3.49L73.15,43.34,115.26,7.46H35.11L34.11,3ZM17.46,31a61.46,61.46,0,0,0,4.73,14.91A51.89,51.89,0,0,0,32.61,60.48a1.47,1.47,0,0,0,1.17.45,5.31,5.31,0,0,0,2-.67,17.91,17.91,0,0,0,2.1-1.36c3.14-2.18,7-4.89,10.29-1.85.08.07.12.14.2.2L58.84,68.78a1.13,1.13,0,0,1,.1.13,6.09,6.09,0,0,1,.79,5.77,14.31,14.31,0,0,1-3.94,5.76,13.76,13.76,0,0,1-7.94,3.46,29.8,29.8,0,0,1-8.28-.4,27.16,27.16,0,0,1-11.31-4.73,54.16,54.16,0,0,1-9.86-9.43l-.24-.29c-1.52-1.8-3.16-3.73-4.69-5.88A78.72,78.72,0,0,1,1,34.34C-.72,25.59-.37,16.85,3.33,9.62c2-4,5.06-7.2,9-8.69,3.44-1.32,7.51-1.34,12.13.63a1.67,1.67,0,0,1,1,1.24l3.73,16.58a4.57,4.57,0,0,1-.82,4.88,9.43,9.43,0,0,1-4.29,2.5c-.56.24-1.21.45-1.9.67-2.27.74-4.86,1.61-4.73,3.65v0Zm70.72,5.33,30.26,31.73V10.58L88.18,36.36Z"
+              /></svg
+            >رابطہ کریں
+          </a>
+        </div>
+      </div>
+      <a class="login-icon-show" href="/signin" title="Sign In"
+        ><?xml version="1.0"?>
+        <svg
+          class="login-icon"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 112c-48.6 0-88 39.4-88 88C168 248.6 207.4 288 256 288s88-39.4 88-88C344 151.4 304.6 112 256 112zM256 240c-22.06 0-40-17.95-40-40C216 177.9 233.9 160 256 160s40 17.94 40 40C296 222.1 278.1 240 256 240zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-46.73 0-89.76-15.68-124.5-41.79C148.8 389 182.4 368 220.2 368h71.69c37.75 0 71.31 21.01 88.68 54.21C345.8 448.3 302.7 464 256 464zM416.2 388.5C389.2 346.3 343.2 320 291.8 320H220.2c-51.36 0-97.35 26.25-124.4 68.48C65.96 352.5 48 306.3 48 256c0-114.7 93.31-208 208-208s208 93.31 208 208C464 306.3 446 352.5 416.2 388.5z"
+            fill="#004b87"
+          />
+        </svg>
+      </a>
+    </nav>
+    <div class="marquee">
+    <marquee behavior="sliding" direction="left">
+      <% for (let i = 1; i < Math.min(4, news.length); i++) { %>
+          <h3 class="marquee-content">|<%= news[i].newsHeading %></h3>
+          <% } %></marquee>
+        
+          <div class="price-tag"><div class="update">اپ ڈیٹس</div>
+          <div class="strips">
+        <div class="strip"></div>
+        <div class="strip"></div>
+        <div class="strip"></div></div>
+        </div>
+        </div>
+    <br />
+    
+     
+
+    
+
+    <br />
+    <div class="news-container">
+      <div class="element-tag et-tt">
+        <div id="Group_190">
+          <img id="Group_189" src="/images/Group_189.png" srcset="/images/Group_189.png 1x, /images/Group_189@2x.png 2x">
+          <dotlottie-player class="animation" src="https://lottie.host/9c0b5242-cc11-4d43-8606-25d55a708eae/IK0wlkW8Bo.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
+        </div>
+          
+          
+          <div id="Group_198">
+          <img id="Group_191_c" src="/images/Group_191_c.png" srcset="/images/Group_191_c.png 1x, /images/Group_191_c@2x.png 2x">
+            
+          
+        </div>
+          <div id="Group_194">
+          <img class="Path_106"
+          src="/images/green.png" alt="">
+          
+        </div>
+          <div id="ndb_1">
+          <span>تازہ ترین</span>
+        </div>
+      </div>
+      <% if (news[0]) { %>
+        <div class="main-news">
+          <a class="link" href="/news/<%= news[0].id %>">
+            <div class="anchor">
+          <img src="/<%= news[0].image %>" alt="<%= news[0].newsHeading %>" />
+        <h2><%= news[0].newsHeading %></h2>
+        <p class="description"><%= news[0].description %></p>
+      </div></a>
+        <% } else { %>
+        <p>No news available</p>
+        <% } %>
+      </div>
+
+      <div class="side-news">
+        <% for (let i = 1; i < Math.min(5, news.length); i++) { %>
+        <a class="link" href="/news/<%= news[i].id %>">
+        <div class="side-news-item">
+          <img src="/<%= news[i].image %>" alt="<%= news[i].newsHeading %>" />
+          <div>
+            <h2><%= news[i].newsHeading %></h2>
+            <p class="description"><%= news[i].description %></p>
+          </div>
+        </div></a>
+        <% } %>
+      </div>
+    </div>
+    <br />
+    <hr class="hr-line"/>
+    <br />
+    
+    
+    <div class="jhelum-news-container">
+      <div class="jhelum-inner-1">
+        <div class="element-tag et-m">
+          <div id="Group_190">
+            <img id="Group_189" src="/images/Group_189.png" srcset="/images/Group_189.png 1x, /images/Group_189@2x.png 2x">
+            <dotlottie-player class="animation" src="https://lottie.host/9c0b5242-cc11-4d43-8606-25d55a708eae/IK0wlkW8Bo.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
+          </div>
+            
+            
+            <div id="Group_198">
+            <img id="Group_191_c" src="/images/Group_191_c.png" srcset="/images/Group_191_c.png 1x, /images/Group_191_c@2x.png 2x">
+              
+            
+          </div>
+            <div id="Group_194">
+            <img class="Path_106"
+            src="/images/green.png" alt="">
+            
+          </div>
+            <div id="ndb_2">
+            <span>موسم</span>
+          </div>
+        </div>
+        <!-- Weather fetching div -->
+        <div class="weather-fetching">
+          <div class="weather-flex" style="display: flex; justify-content:space-around;">
+            <!-- Weather information for Jhelum -->
+            <div class="weather-info" id="jhelum-weather-info">
+              <!-- Weather information will be displayed here -->
+            </div>
+            <div class="lottie">
+            <dotlottie-player src="https://lottie.host/5778c653-cf90-4618-99f3-7d67a6c27e97/HC3nrvUdFJ.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></dotlottie-player></div>
+        </div>
+          <div class="button"><button class="weather-button">تازہ ترین خبریں پڑھنے کیلئے یہاں پر کلک کیجئے</button></div>
+        </div>
+      </div>
+      <div class="jhelum-inner-2">
+        <div class="element-tag et-j">
+          <div id="Group_190">
+            <img id="Group_189" src="/images/Group_189.png" srcset="/images/Group_189.png 1x, /images/Group_189@2x.png 2x">
+            <dotlottie-player class="animation" src="https://lottie.host/9c0b5242-cc11-4d43-8606-25d55a708eae/IK0wlkW8Bo.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
+          </div>
+            
+            
+            <div id="Group_198">
+            <img id="Group_191_c" src="/images/Group_191_c.png" srcset="/images/Group_191_c.png 1x, /images/Group_191_c@2x.png 2x">
+              
+            
+          </div>
+            <div id="Group_194">
+            <img class="Path_106" id="PATH_106_j"
+            src="/images/green.png" alt="">
+            
+          </div>
+            <div id="ndb_3">
+            <span> مقامی خبریں</span>
+          </div>
+        </div>
+        <!-- News div for Jhelum news -->
+        <div class="jhelum-news">
+          <% let jhelumNewsCount = 0; %> <% for (let i = 0; i < news.length &&
+          jhelumNewsCount < 4; i++) { %> <% if (news[i].category === 'JHELUM') {
+          %>
+          <a class="link" href="/news/<%= news[i].id %>">
+          <div class="jhelum-news-card">
+            <img src="/<%= news[i].image %>" alt="<%= news[i].newsHeading %>" />
+            <div class="jhelum-news-content">
+              <h3><%= news[i].newsHeading %></h3>
+              <div class="time-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="12"
+                  height="12"
+                  color="#888888"
+                  fill="none"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M12 8V12L14 14"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="time" id="news-time-<%= news[i].id %>">
+                  <%= news[i].newsCreationTime %>
+                </p>
+              </div>
+            </div>
+          </div></a>
+          <% jhelumNewsCount++; %> <% } %> <% } %>
+        </div>
+      </div>
+    </div>
+    <br />
+    <hr class="hr-line" />
+    <br />
+    
+    <div class="national-news">
+      <div class="element-tag et-n">
+        <div id="Group_190">
+          <img id="Group_189" src="/images/Group_189.png" srcset="/images/Group_189.png 1x, /images/Group_189@2x.png 2x">
+          <dotlottie-player class="animation" src="https://lottie.host/9c0b5242-cc11-4d43-8606-25d55a708eae/IK0wlkW8Bo.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
+        </div>
+          
+          
+          <div id="Group_198">
+          <img id="Group_191_c" src="/images/Group_191_c.png" srcset="/images/Group_191_c.png 1x, /images/Group_191_c@2x.png 2x">
+            
+          
+        </div>
+          <div id="Group_194">
+          <img class="Path_106"
+          src="/images/green.png" alt="">
+          
+        </div>
+          <div id="ndb_4">
+          <span>قومی خبریں</span>
+        </div>
+      </div>
+      <% let nationalNewsCount = 0; %> <% for (let i = 0; i < news.length &&
+      nationalNewsCount < 6; i++) { %> <% if (news[i].category === 'NATIONAL') {
+      %>
+      <a class="link" href="/news/<%= news[i].id %>">
+      <div class="national-news-card">
+        <img src="/<%= news[i].image %>" alt="<%= news[i].newsHeading %>" />
+        <div class="jhelum-news-content">
+          <h3><%= news[i].newsHeading %></h3>
+          <div class="time-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="12"
+              height="12"
+              color="#888888"
+              fill="none"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M12 8V12L14 14"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <p class="time" id="news-time-<%= news[i].id %>">
+              <%= news[i].newsCreationTime %>
+            </p>
+          </div>
+        </div>
+      </div></a>
+      <% nationalNewsCount++; %> <% } %> <% } %>
+    </div>
+  </div>
+  <br />
+  <hr class="hr-line" />
+  <br />
+  
+  <div class="international-news">
+   
+    <div class="element-tag_i et-i">
+      <div id="Group_190_i">
+        <img id="Group_189_i" src="/images/Group_189.png" srcset="/images/Group_189.png 1x, /images/Group_189@2x.png 2x">
+        <dotlottie-player class="animation" src="https://lottie.host/9c0b5242-cc11-4d43-8606-25d55a708eae/IK0wlkW8Bo.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
+      </div>
+        
+        
+        <div id="Group_198_i">
+        <img id="Group_191_c_i" src="/images/Group_191_c.png" srcset="/images/Group_191_c.png 1x, /images/Group_191_c@2x.png 2x">
+          
+        
+      </div>
+        <div id="Group_194_i">
+        <img class="Path_106_i"  id="PATH_106_i"
+        src="/images/green.png" alt="">
+        
+      </div>
+        <div id="ndb_5">
+        <span> بین الاقوامی خبریں</span>
+      </div>
+    </div>
+    <% let internationalNewsCount = 0; %> <% for (let i = 0; i < news.length &&
+    internationalNewsCount < 6; i++) { %> <% if (news[i].category === 'INTERNATIONAL') {
+    %>
+    <a class="link" href="/news/<%= news[i].id %>">
+    <div class="international-news-card">
+      <img src="/<%= news[i].image %>" alt="<%= news[i].newsHeading %>" />
+      <div class="jhelum-news-content">
+        <h3><%= news[i].newsHeading %></h3>
+        <div class="time-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="12"
+            height="12"
+            color="#888888"
+            fill="none"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <path
+              d="M12 8V12L14 14"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <p class="time" id="news-time-<%= news[i].id %>">
+            <%= news[i].newsCreationTime %>
+          </p>
+        </div>
+      </div>
+
+    </div></a>
+    <% internationalNewsCount++; %> <% } %> <% } %>
+  </div>
+  <br />
+  <hr class="hr-line"/>
+  <br />
+  <footer>
+    <img
+      class="footerlogo"
+      src="/images/logo-final.jpg"
+      alt="jhelum news logo"
+      height="80px"
+      width="80px"
+    />
+    <div class="foot">
+      <div class="foot-content">
+        <a href=""><img src="/images/f_email.png" alt="" /></a>
+        <a href=""><img src="/images/f_insta.png" alt="" /></a>
+        <a href=""><img src="/images/f_utube.png" alt="" /></a>
+        <a href=""><img src="/images/f_fb.png" alt="" /></a>
+        <a href=""><img src="/images/f_x.png" alt="" /></a>
+      </div>
+    </div>
+    <div class="line1"></div>
+    <p class="copyright">Copyright © JHELUM NEWS</p>
+    <div class="line2"></div>
+    <div class="last-container">
+      <p class="text-end0">contact@jhelumnews.pk | © All rights reserved.</p>
+      <p class="text-end">
+        یہ ویب سائٹ کے مواد کی نقل یا غیر مجاز استعمال کسی بھی طریقے سے خلاف
+        ورزی ہے اور سختی سے ممنوع ہے۔
+      </p>
+    </div>
+  </footer>
+    <script>
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=Jhelum&appid=0e7b18f66e3a6df4352c813c98a3d872&units=metric"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const weatherInfo = document.getElementById("jhelum-weather-info");
+          // Display temperature, humidity, weather, and wind speed
+          weatherInfo.innerHTML = `
+        <p>درجہ حرارت:C° ${data.main.temp}</p>
+        <p>بارش: %${data.clouds.all}</p>
+        <p>نمی: %${data.main.humidity}</p>
+        <p>ہوا: ${data.wind.speed} میٹر فی سیکنڈ</p>
+        `;
+        })
+        .catch((error) => console.log("Error fetching weather data:", error));
+
+
+
+
+        function updateTimeDifference() {
+          const newsItems = document.querySelectorAll('.time');
+          newsItems.forEach(newsItem => {
+            const newsTimeString = newsItem.textContent;
+            const newsTime = new Date(newsTimeString.replace(/-/g, '/')); // Replace hyphens with slashes for cross-browser compatibility
+            
+            // Check if newsTime is a valid Date object
+            if (isNaN(newsTime.getTime())) {
+              console.error(`Invalid date format for "${newsTimeString}"`);
+              return; // Skip this iteration
+            }
+            
+            const currentTime = new Date();
+            const timeDifferenceInSeconds = Math.floor((currentTime - newsTime) / 1000); // Time difference in seconds
+      
+            // Format the time difference in Urdu
+            let formattedTimeDifference;
+            if (timeDifferenceInSeconds < 60) {
+              formattedTimeDifference = `${timeDifferenceInSeconds} سیکنڈ پہلے`;
+            } else if (timeDifferenceInSeconds < 3600) {
+              const minutes = Math.floor(timeDifferenceInSeconds / 60);
+              formattedTimeDifference = `${minutes} منٹ پہلے`;
+            } else if (timeDifferenceInSeconds < 86400) { // Less than 24 hours
+              const hours = Math.floor(timeDifferenceInSeconds / 3600);
+              const remainingMinutes = Math.floor((timeDifferenceInSeconds % 3600) / 60);
+              formattedTimeDifference = `${hours} گھنٹے ${remainingMinutes} منٹ پہلے`;
+            } else {
+              const days = Math.floor(timeDifferenceInSeconds / 86400);
+              formattedTimeDifference = `${days} دن پہلے`;
+            }
+      
+            // Update the element's content
+            newsItem.textContent = formattedTimeDifference;
+          });
+        }
+      
+        // Call updateTimeDifference once when the page loads
+        updateTimeDifference();
+      
+        // Call updateTimeDifference every second to keep the time difference updated
+        setInterval(updateTimeDifference, 1000); // 1000 milliseconds = 1 second
+
+        function toggleMenu() {
+          const menu = document.getElementById("menu");
+          menu.classList.toggle("show");
+        }
+    </script>
+  </body>
+</html>
