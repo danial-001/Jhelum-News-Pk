@@ -22,6 +22,18 @@ Dynamic news platform for Jhelum featuring a Node.js and Express.js backend, Mon
 
    ```bash
    git clone https://github.com/danial-001/Jhelum-News-Pk.git
-Navigate to the project directory:
 
+2. Navigate to the project directory:
 
+   ```bash
+   cd Jhelum-News-Pk
+
+3. Install the required dependencies:
+
+   ```bash
+   npm install
+
+4. Run the application:
+
+   ```bash
+  npm start
