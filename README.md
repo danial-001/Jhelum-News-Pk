@@ -36,4 +36,4 @@ Dynamic news platform for Jhelum featuring a Node.js and Express.js backend, Mon
 4. Run the application:
 
    ```bash
-  npm start
+   npm start
